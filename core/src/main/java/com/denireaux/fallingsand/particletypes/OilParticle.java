@@ -8,7 +8,7 @@ import com.denireaux.fallingsand.utils.utils;
 
 public class OilParticle extends Particle implements ILiquid {
 
-    private static final Logger log = Logger.getLogger(String.valueOf(OilParticle.class));
+    // private static final Logger log = Logger.getLogger(String.valueOf(OilParticle.class));
 
     public OilParticle(int x, int y, String id) {
         super(x, y, id);

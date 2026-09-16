@@ -17,7 +17,6 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import com.denireaux.fallingsand.fauna.WormSegment;
 import com.denireaux.fallingsand.particletypes.AshParticle;
 import com.denireaux.fallingsand.particletypes.CarbonParticle;
 import com.denireaux.fallingsand.particletypes.FuseParticle;
@@ -247,8 +246,6 @@ public class FallingSandGame extends ApplicationAdapter {
         if (type instanceof SoilParticle || type == ParticleType.SOIL) return SOILCOLOR;
         if (type instanceof WetSoilParticle || type == ParticleType.WETSOIL) return WETSOILCOLOR;
         if (type instanceof FuseParticle || type == ParticleType.FUSE) return FUSECOLOR;
-
-        if (type instanceof WormSegment) return WORMCOLOR;
         
         return null;
     }

@@ -1,6 +1,5 @@
 package com.denireaux.fallingsand.particletypes;
 
-import com.denireaux.fallingsand.fauna.WormFactory;
 import com.denireaux.fallingsand.utils.utils;
 
 public class GrassParticle extends Particle {
@@ -69,35 +68,6 @@ public class GrassParticle extends Particle {
                 if (growFactor) grid[x + 1][y] = new GrassParticle(x + 1, y, id);
             }
         }
-    }
-
-    private void handleWormSpawn(Particle[][] grid, int x, int y) {
-        // Two random gates to keep worms rare
-        boolean wormFactor          = utils.getUnfairBoolean(20);
-        boolean wormDelaySpawnFactor = utils.getUnfairBoolean(20);
-
-        if (!(wormFactor && wormDelaySpawnFactor)) {
-            return;
-        }
-
-        int width  = grid.length;
-        int height = grid[0].length;
-
-        // Let’s spawn the worm with its head just above this grass tile
-        int headX = x;
-        int headY = y + 1; // or y - 1 depending on how you think "above" works in your grid
-
-        // Make sure the worm fits: head, mid, tail horizontally to the left
-        if (!inBounds(headX, headY, width, height)) return;
-        if (!inBounds(headX - 1, headY, width, height)) return;
-        if (!inBounds(headX - 2, headY, width, height)) return;
-
-        if (grid[headX][headY] != null) return;
-        if (grid[headX - 1][headY] != null) return;
-        if (grid[headX - 2][headY] != null) return;
-
-        // Correct call: use coordinates, not grid[x][y]
-        WormFactory.spawnWorm(headX, headY, grid);
     }
 
     private boolean inBounds(int x, int y, int width, int height) {

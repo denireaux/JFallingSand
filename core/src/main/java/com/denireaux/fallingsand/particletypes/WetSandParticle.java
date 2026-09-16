@@ -6,9 +6,8 @@ import com.denireaux.fallingsand.behaviors.ISolid;
 import com.denireaux.fallingsand.utils.utils;
 
 public class WetSandParticle extends Particle implements ISolid {
-    private static final Logger log = Logger.getLogger(String.valueOf(WetSandParticle.class));
+    
     private int wetStep = 0;
-    private boolean hasDried = false;
 
     public WetSandParticle(int x, int y, String id) {
         super(x, y, id);
@@ -58,11 +57,11 @@ public class WetSandParticle extends Particle implements ISolid {
     }
 
     // TODO: the wetStep here might need to be revisited...
-    private void tryDrySelf(Particle[][] grid, int x, int y) {
-        if (!hasDried) {
-            wetStep += 1;
-            if (wetStep < 1000) return;
-        }
-        convertParticle(grid, x, y, "sand");
-    }
+    // private void tryDrySelf(Particle[][] grid, int x, int y) {
+    //     if (!hasDried) {
+    //         wetStep += 1;
+    //         if (wetStep < 1000) return;
+    //     }
+    //     convertParticle(grid, x, y, "sand");
+    // }
 }
