@@ -1,7 +1,5 @@
 package com.denireaux.fallingsand.particletypes;
 
-import java.util.logging.Logger;
-
 import com.denireaux.fallingsand.behaviors.ISolid;
 import com.denireaux.fallingsand.utils.utils;
 

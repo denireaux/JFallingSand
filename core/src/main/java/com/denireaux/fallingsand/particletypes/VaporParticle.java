@@ -1,14 +1,9 @@
 package com.denireaux.fallingsand.particletypes;
 
-import java.util.logging.Logger;
-
-import com.denireaux.fallingsand.FallingSandGame;
 import com.denireaux.fallingsand.helpers.MovementHelper;
 import com.denireaux.fallingsand.utils.utils;
 
 public class VaporParticle extends Particle {
-
-    private static final Logger log = Logger.getLogger(String.valueOf(FallingSandGame.class));
 
     public VaporParticle(int x, int y, String id) {
         super(x, y, id);

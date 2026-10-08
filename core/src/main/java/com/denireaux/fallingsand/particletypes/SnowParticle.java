@@ -1,14 +1,9 @@
 package com.denireaux.fallingsand.particletypes;
 
-import java.util.logging.Logger;
-
 import com.denireaux.fallingsand.behaviors.ISolid;
 import com.denireaux.fallingsand.utils.utils;
 
 public class SnowParticle extends Particle implements ISolid {
-
-    private static final Logger log = Logger.getLogger(String.valueOf(SnowParticle.class));
-
     public int meltStep;
 
     public SnowParticle(int x, int y, String id) {

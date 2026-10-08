@@ -35,25 +35,6 @@ public class SoilParticle extends Particle implements ISolid {
         handleDispersionUnderWater(grid, x, y);
     }
 
-    private void tryContinueToSink(Particle[][] grid, int x, int y) {
-        Particle particleLeft = getLeftParticle(grid, x, y);
-        Particle particleRight = getRightParticle(grid, x, y);
-        if (particleLeft == null || particleRight == null) return;
-        String particleLeftId = particleLeft.getId();
-        String particleRightId = particleRight.getId();
-        if ("water".equals(particleLeftId) && "water".equals(particleRightId)) {
-            if (Math.random() < 0.5) {
-                trySwappingWithRight(grid, x, y);
-                deleteSelf(grid, x, y);
-            } else {
-                trySwappingWithLeft(grid, x, y);
-                deleteSelf(grid, x, y);
-            }
-            return;
-        }
-        trySwappingWithLeft(grid, x, y);
-    }
-
     private void checkForWetness(Particle[][] grid, int x, int y) {
         Particle[] surroundingParticles = getSurroundingParticles(grid);
         for (Particle particle : surroundingParticles) {
