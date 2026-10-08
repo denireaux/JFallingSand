@@ -29,9 +29,6 @@ public class GrassParticle extends Particle {
     @Override
     public void tryNormalMovement(Particle[][] grid) {
         tryGrow(grid);
-        // TODO: Fix handling of worm spawn/worm behavior
-        // Note: Might be best if not a particle type
-        // handleWormSpawn(grid, x, y);
     }
 
     private void tryGrow(Particle[][] grid) {
@@ -69,9 +66,4 @@ public class GrassParticle extends Particle {
             }
         }
     }
-
-    private boolean inBounds(int x, int y, int width, int height) {
-        return x >= 0 && x < width && y >= 0 && y < height;
-    }
-
 }

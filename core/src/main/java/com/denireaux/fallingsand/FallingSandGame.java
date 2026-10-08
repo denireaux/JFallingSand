@@ -73,7 +73,6 @@ public class FallingSandGame extends ApplicationAdapter {
     private boolean updateLeftToRight = true;
 
     private final Color SANDCOLOR     = new Color(1.00f, 0.96f, 0.47f, 1f);
-    // private final Color WATERCOLOR    = new Color(0.00f, 0.90f, 1.00f, 1f);
     private final Color WATERCOLOR    = new Color(0.00f, 0.90f, 1.00f, 0.5f);
     private final Color WETSANDCOLOR  = new Color(1.00f, 0.64f, 0.00f, 1f);
     private final Color VAPORCOLOR    = new Color(0.80f, 0.85f, 0.90f, 1f);
@@ -92,8 +91,6 @@ public class FallingSandGame extends ApplicationAdapter {
     private final Color SOILCOLOR     = new Color(0.55f, 0.43f, 0.32f, 1f);
     private final Color WETSOILCOLOR  = new Color(0.65f, 0.45f, 0.4f, 1f);
     private final Color FUSECOLOR     = new Color(1.2f, 1.25f, 122f, 1f);
-
-    private final Color WORMCOLOR = new Color(0.8f, 0.1f, 0.8f, 1f);
 
     @Override
     public void create() {
@@ -225,10 +222,8 @@ public class FallingSandGame extends ApplicationAdapter {
 
     private Color getColorForType(Object type) {
         if (type instanceof SandParticle || type == ParticleType.SAND) return SANDCOLOR;
-        
         if (type instanceof WaterParticle || type == ParticleType.WATER)
             return new Color(WATERCOLOR.r, WATERCOLOR.g, WATERCOLOR.b, 0.6f);
-
         if (type instanceof WetSandParticle || type == ParticleType.WETSAND) return WETSANDCOLOR;
         if (type instanceof VaporParticle || type == ParticleType.VAPOR) return VAPORCOLOR;
         if (type instanceof LavaParticle || type == ParticleType.LAVA) return LAVACOLOR;
