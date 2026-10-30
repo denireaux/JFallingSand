@@ -219,7 +219,6 @@ public class FallingSandGame extends ApplicationAdapter {
         }
     }
 
-
     private Color getColorForType(Object type) {
         if (type instanceof SandParticle || type == ParticleType.SAND) return SANDCOLOR;
         if (type instanceof WaterParticle || type == ParticleType.WATER)
