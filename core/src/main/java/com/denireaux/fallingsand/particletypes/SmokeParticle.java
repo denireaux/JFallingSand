@@ -2,7 +2,7 @@ package com.denireaux.fallingsand.particletypes;
 
 import com.denireaux.fallingsand.behaviors.IGas;
 import com.denireaux.fallingsand.helpers.MovementHelper;
-import com.denireaux.fallingsand.utils.utils;
+import com.denireaux.fallingsand.helpers.Utils;
 
 public class SmokeParticle extends Particle implements IGas{
     
@@ -33,7 +33,7 @@ public class SmokeParticle extends Particle implements IGas{
         boolean canMoveUp = MovementHelper.canMoveUp(grid, x, y);
         boolean canLeft = MovementHelper.canLeft(grid, x, y);
         boolean canRight = MovementHelper.canRight(grid, x, y);
-        boolean leftFactor = utils.getRandomBoolean();
+        boolean leftFactor = Utils.getRandomBoolean();
         Particle[] surroundingParticles = getSurroundingParticles(grid);
         if (surroundingParticles[2] != null && !"stone".equals(surroundingParticles[2].getId())) {
             if ("smoke".equals(surroundingParticles[2].getId())) return;

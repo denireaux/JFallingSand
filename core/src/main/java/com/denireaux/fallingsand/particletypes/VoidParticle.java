@@ -1,7 +1,7 @@
 package com.denireaux.fallingsand.particletypes;
 
 import com.denireaux.fallingsand.behaviors.ISolid;
-import com.denireaux.fallingsand.utils.utils;
+import com.denireaux.fallingsand.helpers.Utils;
 
 public class VoidParticle extends Particle implements ISolid {
     private int sinkCounter = 0;
@@ -44,7 +44,7 @@ public class VoidParticle extends Particle implements ISolid {
         for (Particle particle : surroundings) {
             if (particle == null) return;
             if (!particle.isWet && "sand".equals(particle.getId())) {
-                boolean wetSandFactor = utils.getRandomBoolean();
+                boolean wetSandFactor = Utils.getRandomBoolean();
                 boolean canKeepWetting = wetStep >= 10;
                 if (wetSandFactor && canKeepWetting) {    
                     int sandParticleX = particle.x; 

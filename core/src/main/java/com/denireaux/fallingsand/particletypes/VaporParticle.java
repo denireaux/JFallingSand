@@ -1,7 +1,7 @@
 package com.denireaux.fallingsand.particletypes;
 
 import com.denireaux.fallingsand.helpers.MovementHelper;
-import com.denireaux.fallingsand.utils.utils;
+import com.denireaux.fallingsand.helpers.Utils;
 
 public class VaporParticle extends Particle {
 
@@ -33,7 +33,7 @@ public class VaporParticle extends Particle {
         boolean canMoveUp = MovementHelper.canMoveUp(grid, x, y);
         boolean canLeft = MovementHelper.canLeft(grid, x, y);
         boolean canRight = MovementHelper.canRight(grid, x, y);
-        boolean leftFactor = utils.getRandomBoolean();
+        boolean leftFactor = Utils.getRandomBoolean();
         Particle[] surroundingParticles = getSurroundingParticles(grid);
         if (surroundingParticles[2] != null && !"stone".equals(surroundingParticles[2].getId())) {
             if ("vapor".equals(surroundingParticles[2].getId())) return;
@@ -57,9 +57,9 @@ public class VaporParticle extends Particle {
     private boolean checkForCondense(Particle[][] grid, int x, int y) { return y >= 600; }
 
     private void condense(Particle[][] grid, int x, int y) {
-        boolean canCondense = utils.getRandomBoolean();
+        boolean canCondense = Utils.getRandomBoolean();
         if (checkForCondense(grid, x, y)) {
-            boolean willCondense = utils.getUnfairBoolean(20);
+            boolean willCondense = Utils.getUnfairBoolean(20);
             if (canCondense && willCondense) convertParticle(grid, x, y, "water");
         }
     }

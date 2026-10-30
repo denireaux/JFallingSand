@@ -1,7 +1,7 @@
 package com.denireaux.fallingsand.particletypes;
 
 import com.denireaux.fallingsand.behaviors.ISolid;
-import com.denireaux.fallingsand.utils.utils;
+import com.denireaux.fallingsand.helpers.Utils;
 
 public class WetSandParticle extends Particle implements ISolid {
     
@@ -35,7 +35,6 @@ public class WetSandParticle extends Particle implements ISolid {
         handleDrySandNeighbors(grid, x, y);
         trySinking(grid, x, y);
         tryNormalMovement(grid);
-//         tryDrySelf(grid, x, y);
     }
 
     private void handleDrySandNeighbors(Particle[][] grid, int x, int y) {
@@ -43,7 +42,7 @@ public class WetSandParticle extends Particle implements ISolid {
         for (Particle particle : surroundings) {
             if (particle == null) continue;
             if (!particle.isWet && "sand".equals(particle.getId())) {
-                boolean wetSandFactor = utils.getRandomBoolean();
+                boolean wetSandFactor = Utils.getRandomBoolean();
                 boolean canKeepWetting = wetStep <= 10;
                 if (wetSandFactor && canKeepWetting) {
                     int sandParticleX = particle.x;
@@ -53,13 +52,4 @@ public class WetSandParticle extends Particle implements ISolid {
             }
         }
     }
-
-    // TODO: the wetStep here might need to be revisited...
-    // private void tryDrySelf(Particle[][] grid, int x, int y) {
-    //     if (!hasDried) {
-    //         wetStep += 1;
-    //         if (wetStep < 1000) return;
-    //     }
-    //     convertParticle(grid, x, y, "sand");
-    // }
 }

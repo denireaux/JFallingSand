@@ -2,7 +2,7 @@ package com.denireaux.fallingsand.particletypes;
 
 import com.denireaux.fallingsand.behaviors.ILiquid;
 import com.denireaux.fallingsand.helpers.MovementHelper;
-import com.denireaux.fallingsand.utils.utils;
+import com.denireaux.fallingsand.helpers.Utils;
 
 public class WaterParticle extends Particle implements ILiquid {
 
@@ -42,7 +42,7 @@ public class WaterParticle extends Particle implements ILiquid {
         }
 
         if (canDownLeft && canDownRight) {
-            if (utils.getRandomBoolean()) {
+            if (Utils.getRandomBoolean()) {
                 moveDownLeft(grid);
             } else {
                 moveDownRight(grid);
@@ -61,7 +61,7 @@ public class WaterParticle extends Particle implements ILiquid {
         }
 
         if (canLeft && canRight) {
-            if (utils.getRandomBoolean()) {
+            if (Utils.getRandomBoolean()) {
                 moveLeft(grid);
             } else {
                 moveRight(grid);
@@ -108,7 +108,7 @@ public class WaterParticle extends Particle implements ILiquid {
             grid[particleX][particleY] = null;
         }
 
-        boolean carbonFactor = utils.getRandomBoolean();
+        boolean carbonFactor = Utils.getRandomBoolean();
         if (carbonFactor) {
             convertParticle(grid, particleX, particleY, "smoke");
             convertParticle(grid, x, y, "carbon");

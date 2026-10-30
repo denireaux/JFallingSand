@@ -4,7 +4,7 @@ import java.util.logging.Logger;
 
 import com.denireaux.fallingsand.behaviors.ILiquid;
 import com.denireaux.fallingsand.helpers.MovementHelper;
-import com.denireaux.fallingsand.utils.utils;
+import com.denireaux.fallingsand.helpers.Utils;
 
 public class OilParticle extends Particle implements ILiquid {
 
@@ -42,7 +42,7 @@ public class OilParticle extends Particle implements ILiquid {
             return;
         }
         if (canDownLeft && canDownRight) {
-            boolean leftFactor = utils.getRandomBoolean();
+            boolean leftFactor = Utils.getRandomBoolean();
             if (leftFactor) {
                 moveDownLeft(grid);
             } else {
@@ -53,7 +53,7 @@ public class OilParticle extends Particle implements ILiquid {
         if (canDownLeft) moveDownLeft(grid);
         if (canDownRight) moveDownRight(grid);
         if (canLeft && canRight) {
-            boolean leftFactor = utils.getRandomBoolean();
+            boolean leftFactor = Utils.getRandomBoolean();
             if (leftFactor) leftMovement(grid, x, y);
             rightMovement(grid, x, y);
             return;
@@ -96,7 +96,7 @@ public class OilParticle extends Particle implements ILiquid {
     }
 
     private void tryKeepMoving(Particle[][] grid) {
-        while (utils.getRandomBoolean()) {
+        while (Utils.getRandomBoolean()) {
             boolean canLeft = MovementHelper.canLeft(grid, x, y);
             boolean canRight = MovementHelper.canRight(grid, x, y);
             if (canLeft && !canRight) {
@@ -104,7 +104,7 @@ public class OilParticle extends Particle implements ILiquid {
             } else if (canRight && !canLeft) {
                 moveRight(grid);
             } else if (canLeft && canRight) {
-                if (utils.getRandomBoolean()) {
+                if (Utils.getRandomBoolean()) {
                     moveLeft(grid);
                 } else {
                     moveRight(grid);
@@ -134,8 +134,8 @@ public class OilParticle extends Particle implements ILiquid {
         for (Particle particle : surroundings) {
             if (particle == null) return;
             if (particle.isHot) {
-                boolean carbonFactor = utils.getRandomBoolean();
-                boolean fastFactor = utils.getRandomBoolean();
+                boolean carbonFactor = Utils.getRandomBoolean();
+                boolean fastFactor = Utils.getRandomBoolean();
                 if (carbonFactor && fastFactor) {
                     grid[x][y].isHot = true;
                     convertParticle(grid, particle.x, particle.y, "smoke");

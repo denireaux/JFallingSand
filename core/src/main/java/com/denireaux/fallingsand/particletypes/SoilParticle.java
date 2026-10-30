@@ -1,7 +1,7 @@
 package com.denireaux.fallingsand.particletypes;
 
 import com.denireaux.fallingsand.behaviors.ISolid;
-import com.denireaux.fallingsand.utils.utils;
+import com.denireaux.fallingsand.helpers.Utils;
 
 public class SoilParticle extends Particle implements ISolid {
     public SoilParticle(int x, int y, String id) {
@@ -56,7 +56,7 @@ public class SoilParticle extends Particle implements ISolid {
         if (particleAbove == null) return;
         if (!"water".equals(particleAbove.getId())) return;
         
-        boolean leftFactor = utils.getRandomBoolean();
+        boolean leftFactor = Utils.getRandomBoolean();
 
         if (leftFactor && particleLeft != null) {
             if ("water".equals(particleLeft.getId())) {

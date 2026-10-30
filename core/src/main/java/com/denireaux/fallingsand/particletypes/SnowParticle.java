@@ -1,7 +1,7 @@
 package com.denireaux.fallingsand.particletypes;
 
 import com.denireaux.fallingsand.behaviors.ISolid;
-import com.denireaux.fallingsand.utils.utils;
+import com.denireaux.fallingsand.helpers.Utils;
 
 public class SnowParticle extends Particle implements ISolid {
     public int meltStep;
@@ -30,7 +30,7 @@ public class SnowParticle extends Particle implements ISolid {
 
     private void tryMelt(Particle[][] grid) {
         if (meltStep >= 1000) {
-            boolean meltFactor = utils.getRandomBoolean();
+            boolean meltFactor = Utils.getRandomBoolean();
             if (meltFactor) convertParticle(grid, x, y, "water");
         }
         Particle[] surroundings = getSurroundingParticles(grid);

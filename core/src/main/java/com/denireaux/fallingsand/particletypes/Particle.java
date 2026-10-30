@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.function.BiFunction;
 
 import com.denireaux.fallingsand.helpers.MovementHelper;
-import com.denireaux.fallingsand.utils.utils;
+import com.denireaux.fallingsand.helpers.Utils;
 
 public abstract class Particle {
     public int x, y;
@@ -102,7 +102,7 @@ public abstract class Particle {
         boolean canRight = MovementHelper.canRight(grid, x, y);
         boolean canDownLeft = MovementHelper.canMoveDownLeft(grid, x, y);
         boolean canDownRight = MovementHelper.canMoveDownRight(grid, x, y);
-        boolean leftFactor = utils.getRandomBoolean();
+        boolean leftFactor = Utils.getRandomBoolean();
 
         if (canDown) {
             moveDown(grid);

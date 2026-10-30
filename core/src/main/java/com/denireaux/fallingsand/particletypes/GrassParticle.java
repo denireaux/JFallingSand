@@ -1,6 +1,6 @@
 package com.denireaux.fallingsand.particletypes;
 
-import com.denireaux.fallingsand.utils.utils;
+import com.denireaux.fallingsand.helpers.Utils;
 
 public class GrassParticle extends Particle {
 
@@ -38,13 +38,13 @@ public class GrassParticle extends Particle {
         Particle rightParticle = surroundingParticles[1];
 
         if (aboveParticle == null) {
-            boolean growFactor = utils.getUnfairBoolean(20);
+            boolean growFactor = Utils.getUnfairBoolean(20);
             if (growFactor) grid[x][y + 1] = new GrassParticle(x, y + 1, id);
             return;
         }
 
         if ("wetsoil".equals(aboveParticle.getId())) {
-                boolean transformFactor = utils.getUnfairBoolean(20);
+                boolean transformFactor = Utils.getUnfairBoolean(20);
                 if (transformFactor) {
                     grid[x][y + 1] = null; 
                     grid[x][y + 1] = new GrassParticle(x, y + 1, "grass");
@@ -52,16 +52,16 @@ public class GrassParticle extends Particle {
                 }
         }
 
-        boolean spreadFactor = utils.getUnfairBoolean(20);
+        boolean spreadFactor = Utils.getUnfairBoolean(20);
 
         if (spreadFactor) {
             if (leftParticle == null) {
-                boolean growFactor = utils.getUnfairBoolean(20);
+                boolean growFactor = Utils.getUnfairBoolean(20);
                 if (growFactor) grid[x - 1][y] = new GrassParticle(x - 1, y, id);
             }
 
             if (rightParticle == null) {
-                boolean growFactor = utils.getUnfairBoolean(20);
+                boolean growFactor = Utils.getUnfairBoolean(20);
                 if (growFactor) grid[x + 1][y] = new GrassParticle(x + 1, y, id);
             }
         }

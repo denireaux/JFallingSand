@@ -2,7 +2,7 @@ package com.denireaux.fallingsand.particletypes;
 
 import com.denireaux.fallingsand.behaviors.ISolid;
 import com.denireaux.fallingsand.helpers.MovementHelper;
-import com.denireaux.fallingsand.utils.utils;
+import com.denireaux.fallingsand.helpers.Utils;
 
 public class SeedParticle extends Particle implements ISolid {
 
@@ -36,7 +36,7 @@ public class SeedParticle extends Particle implements ISolid {
         boolean canMoveDown = MovementHelper.canMoveDown(grid, x, y);
         boolean canLeft = MovementHelper.canLeft(grid, x, y);
         boolean canRight = MovementHelper.canRight(grid, x, y);
-        boolean leftFactor = utils.getRandomBoolean();
+        boolean leftFactor = Utils.getRandomBoolean();
         if (canMoveDown) {
             moveDown(grid);
         }
