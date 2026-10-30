@@ -4,8 +4,8 @@ import com.denireaux.fallingsand.behaviors.ISolid;
 import com.denireaux.fallingsand.helpers.Utils;
 
 public class VoidParticle extends Particle implements ISolid {
-    private int sinkCounter = 0;
-    private static final float SINK_DELAY = 0.75f;
+    // private int sinkCounter = 0;
+    // private static final float SINK_DELAY = 0.75f;
     private int wetStep = 0;
     private boolean hasDried = false;
 

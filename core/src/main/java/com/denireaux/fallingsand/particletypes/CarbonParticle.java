@@ -5,7 +5,6 @@ import com.denireaux.fallingsand.behaviors.ISolid;
 
 public class CarbonParticle extends Particle implements ISolid {
     public int sinkCounter = 0;
-    private static final float SINK_DELAY = 0.75f;
     protected final String id = "carbon";
 
     public CarbonParticle(int x, int y, String id) {

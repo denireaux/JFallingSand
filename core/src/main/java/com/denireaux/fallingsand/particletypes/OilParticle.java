@@ -1,14 +1,10 @@
 package com.denireaux.fallingsand.particletypes;
 
-import java.util.logging.Logger;
-
 import com.denireaux.fallingsand.behaviors.ILiquid;
 import com.denireaux.fallingsand.helpers.MovementHelper;
 import com.denireaux.fallingsand.helpers.Utils;
 
 public class OilParticle extends Particle implements ILiquid {
-
-    // private static final Logger log = Logger.getLogger(String.valueOf(OilParticle.class));
 
     public OilParticle(int x, int y, String id) {
         super(x, y, id);
